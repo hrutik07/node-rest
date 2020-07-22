@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt-nodejs": "0.0.31",
     "@types/body-parser": "^1.19.0",
     "@types/express": "^4.17.6",
     "@types/jsonwebtoken": "^8.5.0",
@@ -23,8 +24,10 @@
     "@types/nodemon": "^1.19.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "check-node-version": "^4.0.3",
     "express": "^4.17.1",
     "express-validator": "^6.6.0",
+    "node" : "^13.13.0",
     "google-pay": "0.0.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.20",
