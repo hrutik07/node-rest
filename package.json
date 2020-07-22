@@ -23,6 +23,7 @@
     "@types/nodemailer": "^6.4.0",
     "@types/nodemon": "^1.19.0",
     "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "check-node-version": "^4.0.3",
     "express": "^4.17.1",
