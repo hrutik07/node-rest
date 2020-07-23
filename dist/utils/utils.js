@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Utils = void 0;
-const Bcrypt = require("bcrypt");
+const Bcrypt = require("bcryptjs");
 const Multer = require("multer");
 const storageOptions = Multer.diskStorage({ destination: function (req, file, cb) {
         console.log('im in diskstorage');

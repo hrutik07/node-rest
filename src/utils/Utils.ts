@@ -1,4 +1,4 @@
-import * as Bcrypt from 'bcrypt';
+import Bcrypt = require('bcryptjs');
 import * as Multer from 'multer';
 import { error } from 'console';
 
