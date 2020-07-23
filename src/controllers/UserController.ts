@@ -4,7 +4,7 @@ import { Utils } from '../utils/utils';
 //import { error } from 'console';
 import { NodeMailer } from '../utils/NodeMailer';
 //import * as mongoose from 'mongoose';
-import * as Bcrypt from 'bcrypt';
+import Bcrypt = require('bcryptjs');
 import user from '../models/user';
 import { resolve } from 'path';
 import * as jwt from 'jsonwebtoken'
