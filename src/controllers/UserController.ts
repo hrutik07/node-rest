@@ -1,5 +1,5 @@
 import User from '../models/user';
-import { validationResult } from 'express-validator';
+import { validationResult, body } from 'express-validator';
 import { Utils } from '../utils/utils';
 //import { error } from 'console';
 import { NodeMailer } from '../utils/NodeMailer';
@@ -9,7 +9,10 @@ import user from '../models/user';
 import { resolve } from 'path';
 import * as jwt from 'jsonwebtoken'
 import { getEnviromentVariables } from '../enviroments/env';
-import { profile } from 'console';
+import { profile, error } from 'console';
+import * as Cheerio from 'cheerio';
+import * as Request from 'request'
+import { response } from 'express';
 
 export class UserController {
   static async signUp(req, res, next) {
@@ -40,7 +43,7 @@ export class UserController {
       //send verification email
       res.send(user)
       await NodeMailer.sendEmail({
-        to: ['hritikkumthekar7@gmail.com'], subject: 'Email verification',
+        to: [''], subject: 'Email verification',//write email address in''
         html: '<h1>Hello ${username}${verificationToken}</h1>'
 
       });
@@ -118,11 +121,15 @@ export class UserController {
 
 
   }
-  static async test(req, res, next) {
-   const user = await User
-   .find({email : 'hk2@gmail.com'})
-   .setOptions({explain : 'executionStats'})
-  res.send(user);
+  static  test(req, res, next) {
+    const data = [{title : 'item little', price : 'item price', desc : 'item description'}];
+      Request('https://webscraper.io/test-sites/e-commerce/allinone',(error,response,html)=>{
+        if(!error && response.statusCode ==200){
+          res.send(html)
+          const $ = Cheerio.load(html)
+          console.log($('.col-md-12').text())
+        }
+      })
   }
   static async login(req,res,next){
    
